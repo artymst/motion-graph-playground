@@ -4,10 +4,9 @@ body {
   color: #222;
   margin: 0;
   padding: 0;
-}
-
-h1, h2 {
   text-align: center;
+}
+h1, h2 {
   font-weight: bold;
   background: #ececec;
   margin: 0 0 1em 0;
@@ -16,24 +15,22 @@ h1, h2 {
   font-size: 1.3em;
   letter-spacing: 0.01em;
 }
-
 #input-section {
-  max-width: 380px;
-  margin: 2em auto 2em auto;
+  display: inline-block;
   background: #f1f1f1;
   border: 2px solid #888;
   border-radius: 0;
   padding: 1.5em 1em 1em 1em;
   box-shadow: 2px 2px 0 #fff, 4px 4px 0 #aaa;
+  margin-bottom: 2em;
+  text-align: left;
 }
-
 label {
   font-weight: bold;
   display: block;
   margin-top: 0.8em;
   margin-bottom: 0.2em;
 }
-
 input, select {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 1em;
@@ -46,7 +43,6 @@ input, select {
   margin-left: 4px;
   outline: none;
 }
-
 button {
   padding: 6px 10px;
   background: #ececec;
@@ -57,7 +53,6 @@ button {
   cursor: pointer;
   letter-spacing: 0.01em;
 }
-
 button:active {
   border: 2px inset #b0b0b0;
   background: #d3d3d3;
@@ -65,30 +60,27 @@ button:active {
 button:focus {
   outline: 2px dotted #2255dd;
 }
-
 #graphs {
   display: flex;
-  flex-wrap: wrap;
-  gap: 2em;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   margin-top: 2em;
-  align-items: flex-start;
+  margin-bottom: 2em;
 }
-
 .graph-block {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 410px;
+  justify-content: center;
+  width: 450px;
   min-height: 310px;
+  margin: 0 auto;
 }
-
 .download-center {
   margin-top: 8px;
   text-align: center;
   width: 100%;
 }
-
 canvas {
   background: #fff !important;
   border: 2px solid #b0b0b0;
