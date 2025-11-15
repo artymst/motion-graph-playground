@@ -1,5 +1,6 @@
 function plotLineGraph(canvasId, labels, data, label) {
   const ctx = document.getElementById(canvasId).getContext('2d');
+  // Make sure previous chart is removed if it exists
   if (window[canvasId + "Chart"]) window[canvasId + "Chart"].destroy();
   window[canvasId + "Chart"] = new Chart(ctx, {
     type: "line",
