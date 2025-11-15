@@ -9,31 +9,34 @@
 <body>
   <h1>Motion Graph Playground</h1>
   
+  <h2>Enter Motion Parameters</h2>
   <div id="input-section">
     <label for="initial-velocity">Initial Velocity (u, m/s):</label>
     <input type="number" id="initial-velocity" value="0"><br>
-    <label for="acceleration">Acceleration (a, m/s²):</label>
-    <input type="number" id="acceleration" value="0"><br>
-    <label for="time">Time (t, s):</label>
-    <input type="number" id="time" value="5"><br>
-    <button id="plot-btn">Plot Motion Graphs</button>
+    <label for="time">Total Time (t, s):</label>
+    <input type="number" id="time" value="6"><br>
+    <label for="graph-type">Choose Graph:</label>
+    <select id="graph-type">
+      <option value="position">Distance vs Time</option>
+      <option value="velocity">Velocity vs Time</option>
+      <option value="acceleration">Acceleration vs Time</option>
+    </select>
+    <br><br>
+    <h3>Custom Segments (piecewise motion):</h3>
+    <div id="segments-list"></div>
+    <button type="button" id="add-segment-btn">Add Segment</button>
+    <button id="plot-btn" style="margin-left:8px;">Plot Motion Graph</button>
   </div>
 
   <div id="graphs">
     <div class="graph-block">
-      <canvas id="position-graph" width="400" height="250"></canvas>
+      nvas id="main-graph" width="400" heightght="250"></canvas>
       <div class="download-center">
-        <button onclick="downloadCanvas('position-graph')">Download Position Graph</button>
-      </div>
-    </div>
-    <div class="graph-block">
-      <canvas id="velocity-graph" width="400" height="250"></canvas>
-      <div class="download-center">
-        <button onclick="downloadCanvas('velocity-graph')">Download Velocity Graph</button>
+        <button onclick="downloadCanvas('main-graph')">Download Current Graph</button>
       </div>
     </div>
   </div>
-
+  
   <script src="motion.js"></script>
   <script src="graph.js"></script>
   <script src="main.js"></script>
