@@ -4,12 +4,29 @@
   <meta charset="UTF-8">
   <title>Motion Graph Playground</title>
   <link rel="stylesheet" href="style.css">
-  <!-- Chart.js CDN (optional) -->
+  <!-- Chart.js CDN -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
   <h1>Motion Graph Playground</h1>
-  <!-- Add input fields and a canvas or chart element here -->
+  
+  <h2>Enter Motion Parameters</h2>
+  <div id="input-section">
+    <label for="initial-velocity">Initial Velocity (u, m/s):</label>
+    <input type="number" id="initial-velocity" value="0"><br>
+    <label for="acceleration">Acceleration (a, m/s²):</label>
+    <input type="number" id="acceleration" value="0"><br>
+    <label for="time">Time (t, s):</label>
+    <input type="number" id="time" value="5"><br>
+    <button id="plot-btn">Plot Motion Graphs</button>
+  </div>
+
+  <h2>Graphs</h2>
+  <div id="graphs">
+    <canvas id="position-graph" width="400" height="250"></canvas>
+    <canvas id="velocity-graph" width="400" height="250"></canvas>
+  </div>
+
   <script src="motion.js"></script>
   <script src="graph.js"></script>
   <script src="main.js"></script>
