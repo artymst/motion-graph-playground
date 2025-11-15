@@ -6,6 +6,7 @@ body {
   padding: 0;
   text-align: center;
 }
+
 h1, h2 {
   font-weight: bold;
   background: #ececec;
@@ -15,6 +16,7 @@ h1, h2 {
   font-size: 1.3em;
   letter-spacing: 0.01em;
 }
+
 #input-section {
   display: inline-block;
   background: #f1f1f1;
@@ -22,15 +24,17 @@ h1, h2 {
   border-radius: 0;
   padding: 1.5em 1em 1em 1em;
   box-shadow: 2px 2px 0 #fff, 4px 4px 0 #aaa;
-  margin-bottom: 2em;
+  margin-bottom: 0.7em;   /* Tight gap below UI */
   text-align: left;
 }
+
 label {
   font-weight: bold;
   display: block;
   margin-top: 0.8em;
   margin-bottom: 0.2em;
 }
+
 input, select {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 1em;
@@ -43,6 +47,19 @@ input, select {
   margin-left: 4px;
   outline: none;
 }
+
+#custom-acceleration {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  padding: 3px 5px;
+  background: #ececec;
+  border: 2px inset #b0b0b0;
+  color: #444;
+  margin-left: 0;
+  margin-bottom: 6px;
+  width: 260px;
+  font-size: 1em;
+}
+
 button {
   padding: 6px 10px;
   background: #ececec;
@@ -52,7 +69,9 @@ button {
   font-weight: bold;
   cursor: pointer;
   letter-spacing: 0.01em;
+  margin-top: 4px;
 }
+
 button:active {
   border: 2px inset #b0b0b0;
   background: #d3d3d3;
@@ -60,13 +79,15 @@ button:active {
 button:focus {
   outline: 2px dotted #2255dd;
 }
+
 #graphs {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 0.7em;
+  margin-top: 0.7em;      /* Tight gap above graph */
   margin-bottom: 2em;
 }
+
 .graph-block {
   display: flex;
   flex-direction: column;
@@ -76,11 +97,20 @@ button:focus {
   min-height: 310px;
   margin: 0 auto;
 }
+
 .download-center {
   margin-top: 8px;
   text-align: center;
   width: 100%;
 }
+
+.download-center button {
+  display: inline-block;
+  margin: 0 auto;
+  font-size: 1em;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
 canvas {
   background: #fff !important;
   border: 2px solid #b0b0b0;
@@ -92,4 +122,15 @@ canvas {
   height: 250px;
   display: block;
   margin: 0 auto;
+}
+
+@media (max-width: 700px) {
+  #input-section, .graph-block {
+    width: 96vw;
+    min-width: 0;
+  }
+  canvas {
+    width: 96vw;
+    max-width: 96vw;
+  }
 }
