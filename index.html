@@ -8,24 +8,24 @@
 </head>
 <body>
   <h1>Motion Graph Playground</h1>
-
-  <!-- Simple flat input row above the graphs -->
-  <div id="input-section" style="max-width:330px; margin: 1.5em auto 2em auto; background: none; border: none; box-shadow: none;">
+  
+  <h2>Enter Motion Parameters</h2>
+  <div id="input-section">
     <label for="initial-velocity">Initial Velocity (u, m/s):</label>
-    <input type="number" id="initial-velocity" value="0">
-    <label for="acceleration" style="margin-left:18px;">Acceleration (a, m/s²):</label>
-    <input type="number" id="acceleration" value="0">
-    <label for="time" style="margin-left:18px;">Time (t, s):</label>
-    <input type="number" id="time" value="5">
-    <button id="plot-btn" style="margin-left:18px;">Plot</button>
+    <input type="number" id="initial-velocity" value="0"><br>
+    <label for="acceleration">Acceleration (a, m/s²):</label>
+    <input type="number" id="acceleration" value="0"><br>
+    <label for="time">Time (t, s):</label>
+    <input type="number" id="time" value="5"><br>
+    <button id="plot-btn">Plot Motion Graphs</button>
   </div>
 
   <div id="graphs">
-    <div style="text-align:center; margin-bottom: 10px;">
+    <div style="text-align:center; margin-bottom: 8px;">
       <button onclick="downloadCanvas('position-graph')">Download Position Graph</button>
     </div>
     <canvas id="position-graph" width="400" height="250"></canvas>
-    <div style="text-align:center; margin-bottom: 10px;">
+    <div style="text-align:center; margin-bottom: 8px;">
       <button onclick="downloadCanvas('velocity-graph')">Download Velocity Graph</button>
     </div>
     <canvas id="velocity-graph" width="400" height="250"></canvas>
