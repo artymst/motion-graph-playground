@@ -6,20 +6,20 @@ function plotLineGraph(canvasId, labels, data, label) {
     data: {
       labels: labels,
       datasets: [{
-        label: null, // Hide legend, no label
+        label: label,
         data: data,
         fill: false,
-        borderColor: "#111", // Black line
-        backgroundColor: "#111", // Black dots
+        borderColor: "#111", // black line
+        backgroundColor: "#111", // black dots
         pointRadius: 3,
-        pointHoverRadius: 5,
+        pointHoverRadius: 4,
         tension: 0.1
       }]
     },
     options: {
       responsive: false,
       plugins: {
-        legend: { display: false } // <--- Hide the legend completely
+        legend: { display: false } // hide legend
       },
       scales: {
         x: {
