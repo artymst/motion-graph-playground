@@ -9,8 +9,8 @@ function plotLineGraph(canvasId, labels, data, label) {
         label: label,
         data: data,
         fill: false,
-        borderColor: "#111", // black line
-        backgroundColor: "#111", // black dots
+        borderColor: "#111",
+        backgroundColor: "#111",
         pointRadius: 3,
         pointHoverRadius: 4,
         tension: 0.1
@@ -19,7 +19,7 @@ function plotLineGraph(canvasId, labels, data, label) {
     options: {
       responsive: false,
       plugins: {
-        legend: { display: false } // hide legend
+        legend: { display: false }
       },
       scales: {
         x: {
