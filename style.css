@@ -1,108 +1,93 @@
 body {
-  font-family: 'VT323', 'Share Tech Mono', 'Courier New', monospace;
-  background: #222c31;
-  color: #fdddd2;
+  /* Windows 95 default fonts */
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background: #c0c0c0;
+  color: #222;
   margin: 0;
-  padding: 1em 0 0 0;
+  padding: 0;
 }
 
 h1, h2 {
   text-align: center;
-  letter-spacing: 0.08em;
-  background: #184050;
-  color: #00e1c6;
-  padding: 0.25em 0;
-  border-bottom: 2px solid #ff4886;
-  font-weight: normal;
+  font-weight: bold;
+  background: #ececec;
   margin: 0 0 1em 0;
-  font-size: 2.2em;
-  text-shadow: 1px 1px 0 #090a13;
-}
-
-h2 {
-  font-size: 1.15em;
-  background: none;
-  color: #ff77aa;
-  border-bottom: 1px dashed #4ee1fa;
-  margin-top: 2em;
+  padding: 8px 0 6px 0;
+  border-bottom: 2px solid #b0b0b0;
+  font-size: 1.3em;
+  letter-spacing: 0.01em;
 }
 
 #input-section {
   max-width: 340px;
-  margin: 1.5em auto 2em auto;
-  background: #181c20;
-  border: 3px ridge #56ffb0;
-  border-radius: 7px;
-  padding: 1.2em;
-  box-shadow: 0 0 15px 0 #080f1e;
+  margin: 2em auto 2em auto;
+  background: #f1f1f1;
+  border: 2px solid #888;
+  border-radius: 0;
+  padding: 1.2em 1em 1em 1em;
+  box-shadow: 2px 2px 0 #fff, 4px 4px 0 #aaa;
 }
 
 label {
-  font-family: inherit;
-  font-size: 1.1em;
   font-weight: bold;
-  color: #ffbb56;
   display: block;
-  margin-top: 0.7em;
+  margin-top: 0.8em;
+  margin-bottom: 0.2em;
 }
 
 input[type="number"] {
-  font-family: inherit;
-  color: #2fe1e1;
-  background: #13161b;
-  border: 2px solid #ff77aa;
-  border-radius: 4px;
-  padding: 0.5em 0.3em;
-  margin-left: 0.2em;
-  margin-bottom: 0.55em;
-  font-size: 1.1em;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 1em;
+  background: #ececec;
+  border: 2px inset #b0b0b0;
+  color: #222;
+  padding: 3px 5px;
+  margin-bottom: 8px;
+  margin-left: 4px;
   outline: none;
-  box-shadow: 1px 1px 0 #00e1c6 inset;
-  transition: border 0.1s;
-}
-
-input[type="number"]:focus {
-  border: 2px solid #00e1c6;
+  width: 80px;
 }
 
 button {
   width: 100%;
-  padding: 0.8em 1em;
-  background: #00e1c6;
-  border: 3px groove #184050;
-  color: #1b212b;
-  font-family: inherit;
-  font-size: 1.2em;
+  padding: 6px 0;
+  background: #ececec;
+  border: 2px outset #b0b0b0;
+  color: #222;
+  font-size: 1em;
   font-weight: bold;
-  margin-top: 1em;
   cursor: pointer;
-  border-radius: 5px;
-  letter-spacing: 0.05em;
-  box-shadow: 2px 2px 0 #060b10;
-  transition: background 0.15s, color 0.15s;
+  margin-top: 1em;
+  box-shadow: 1px 1px 0 #fff;
+  letter-spacing: 0.01em;
 }
-button:hover {
-  background: #ff4886;
-  color: #fffddd;
+
+button:active {
+  border: 2px inset #b0b0b0;
+  background: #d3d3d3;
+}
+button:focus {
+  outline: 2px dotted #2255dd;
 }
 
 #graphs {
   display: flex;
-  flex-wrap: wrap;
-  gap: 2em;
   justify-content: center;
-  margin-top: 2.5em;
+  gap: 2em;
+  margin-top: 2em;
+  flex-wrap: wrap;
 }
 
 canvas {
-  background: #15161a;
-  border: 3px inset #56ffb0;
-  border-radius: 6px;
-  box-shadow: 1px 1px 0 #ff4886 inset;
-  padding: 0.5em;
-  max-width: 380px;
+  background: #fff;
+  border: 2px solid #b0b0b0;
+  border-radius: 0;
+  box-shadow: 2px 2px 0 #fff inset;
+  padding: 1em;
+  max-width: 350px;
 }
 
+/* Responsive tweaks */
 @media (max-width: 900px) {
   #graphs {
     flex-direction: column;
