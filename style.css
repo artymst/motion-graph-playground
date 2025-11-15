@@ -1,69 +1,89 @@
 body {
-  font-family: 'Segoe UI', 'Arial', sans-serif;
-  background: #f2f4f8;
-  color: #222;
+  font-family: 'VT323', 'Share Tech Mono', 'Courier New', monospace;
+  background: #222c31;
+  color: #fdddd2;
   margin: 0;
-  padding: 2em 0;
-  min-height: 100vh;
+  padding: 1em 0 0 0;
 }
 
-h1 {
+h1, h2 {
   text-align: center;
-  margin-bottom: 1em;
-  letter-spacing: 0.02em;
-  color: #2d3a4a;
+  letter-spacing: 0.08em;
+  background: #184050;
+  color: #00e1c6;
+  padding: 0.25em 0;
+  border-bottom: 2px solid #ff4886;
+  font-weight: normal;
+  margin: 0 0 1em 0;
+  font-size: 2.2em;
+  text-shadow: 1px 1px 0 #090a13;
 }
 
 h2 {
-  font-size: 1.2em;
+  font-size: 1.15em;
+  background: none;
+  color: #ff77aa;
+  border-bottom: 1px dashed #4ee1fa;
   margin-top: 2em;
-  color: #344563;
-  text-align: center;
 }
 
 #input-section {
-  max-width: 350px;
-  margin: 0 auto 2em auto;
-  background: #fff;
-  border-radius: 9px;
-  padding: 1.5em 1.2em 1em 1.2em;
-  box-shadow: 0 2px 15px 0 rgba(60,70,97,0.07);
+  max-width: 340px;
+  margin: 1.5em auto 2em auto;
+  background: #181c20;
+  border: 3px ridge #56ffb0;
+  border-radius: 7px;
+  padding: 1.2em;
+  box-shadow: 0 0 15px 0 #080f1e;
 }
 
 label {
+  font-family: inherit;
+  font-size: 1.1em;
+  font-weight: bold;
+  color: #ffbb56;
   display: block;
-  margin-top: 1em;
-  margin-bottom: 0.35em;
-  font-weight: 500;
+  margin-top: 0.7em;
 }
 
 input[type="number"] {
-  padding: 0.45em;
-  font-size: 1em;
-  border: 1px solid #d1d6e0;
-  border-radius: 6px;
-  margin-left: 0.3em;
-  width: 80px;
-  background: #f9fafb;
-  margin-bottom: 0.5em;
+  font-family: inherit;
+  color: #2fe1e1;
+  background: #13161b;
+  border: 2px solid #ff77aa;
+  border-radius: 4px;
+  padding: 0.5em 0.3em;
+  margin-left: 0.2em;
+  margin-bottom: 0.55em;
+  font-size: 1.1em;
+  outline: none;
+  box-shadow: 1px 1px 0 #00e1c6 inset;
+  transition: border 0.1s;
+}
+
+input[type="number"]:focus {
+  border: 2px solid #00e1c6;
 }
 
 button {
   width: 100%;
-  padding: 0.7em 1em;
-  background: #4074e6;
-  border: none;
-  border-radius: 6px;
-  color: #fff;
-  font-size: 1.1em;
+  padding: 0.8em 1em;
+  background: #00e1c6;
+  border: 3px groove #184050;
+  color: #1b212b;
+  font-family: inherit;
+  font-size: 1.2em;
   font-weight: bold;
-  cursor: pointer;
   margin-top: 1em;
-  box-shadow: 0 1px 4px 0 rgba(60,70,97,0.09);
-  transition: background 0.15s;
+  cursor: pointer;
+  border-radius: 5px;
+  letter-spacing: 0.05em;
+  box-shadow: 2px 2px 0 #060b10;
+  transition: background 0.15s, color 0.15s;
 }
 button:hover {
-  background: #2858c2;
+  background: #ff4886;
+  color: #fffddd;
 }
 
 #graphs {
@@ -71,13 +91,25 @@ button:hover {
   flex-wrap: wrap;
   gap: 2em;
   justify-content: center;
-  margin-top: 2em;
+  margin-top: 2.5em;
 }
 
 canvas {
-  background: #fff;
-  border-radius: 8px;
-  padding: 1em;
-  box-shadow: 0 2px 10px 0 rgba(60,70,97,0.06);
-  max-width: 390px;
+  background: #15161a;
+  border: 3px inset #56ffb0;
+  border-radius: 6px;
+  box-shadow: 1px 1px 0 #ff4886 inset;
+  padding: 0.5em;
+  max-width: 380px;
+}
+
+@media (max-width: 900px) {
+  #graphs {
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+  }
+  canvas {
+    max-width: 95vw;
+  }
 }
