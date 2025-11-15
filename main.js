@@ -16,3 +16,10 @@ document.getElementById("plot-btn").addEventListener("click", function () {
   plotLineGraph("position-graph", labels, positions, "Position (m)");
   plotLineGraph("velocity-graph", labels, velocities, "Velocity (m/s)");
 });
+
+function downloadCanvas(canvasId) {
+  const link = document.createElement("a");
+  link.download = canvasId + ".png";
+  link.href = document.getElementById(canvasId).toDataURL("image/png");
+  link.click();
+}
