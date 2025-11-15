@@ -9,31 +9,28 @@ document.getElementById("plot-btn").addEventListener("click", function () {
     accelInput.length > 0
       ? accelInput
           .split(/[,\s;]+/)
-          .filter((v) => v.length > 0)
+          .filter((v) => v.length > 0 && !isNaN(Number(v)))
           .map(Number)
       : [];
 
-  let labels = [];
-  let positions = [0];      // s_0 = 0
-  let velocities = [u];     // v_0 = u
-  let accelerations = [];   // variable
+  let labels = [], positions = [], velocities = [], accelerations = [];
+  positions.push(0);
+  velocities.push(u);
 
   for (let t = 0; t <= tMax; t++) {
-    // Determine current acceleration
-    let currentA =
-      accelArray.length > 0
-        ? accelArray[Math.min(t, accelArray.length - 1)]
-        : a;
-    accelerations[t] = currentA;
+    // Pick acceleration for this step
+    let thisA = accelArray.length > 0
+      ? accelArray[Math.min(t, accelArray.length - 1)]
+      : a;
+    accelerations.push(thisA);
 
     if (t === 0) {
       labels.push("0");
-      continue; // positions[0] and velocities[0] already set
+      continue;
     }
-
-    velocities[t] = velocities[t - 1] + currentA;
-    // s_n = s_(n-1) + v_(n-1) + 0.5*a_n
-    positions[t] = positions[t - 1] + velocities[t - 1] + 0.5 * currentA;
+    // Step integration: use value from previous time step
+    velocities[t] = velocities[t - 1] + thisA;
+    positions[t] = positions[t - 1] + velocities[t - 1] + 0.5 * thisA;
     labels.push(t.toString());
   }
 
@@ -54,7 +51,6 @@ document.getElementById("plot-btn").addEventListener("click", function () {
 
 function downloadCanvas(canvasId) {
   const canvas = document.getElementById(canvasId);
-  // White background for PNG
   const ctx = canvas.getContext('2d');
   ctx.save();
   ctx.globalCompositeOperation = 'destination-over';
