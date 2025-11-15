@@ -64,7 +64,7 @@ button:focus {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 2em;
+  margin-top: 0.7em;
   margin-bottom: 2em;
 }
 .graph-block {
