@@ -90,7 +90,7 @@ button:focus {
 }
 
 canvas {
-  background: #fff;
+  background: #fff !important;
   border: 2px solid #b0b0b0;
   border-radius: 0;
   box-shadow: 2px 2px 0 #fff inset;
